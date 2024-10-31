@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="pract10.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:pract10"
+    Shell.FlyoutBehavior="Disabled"
+    Title="pract10">
+
+    <TabBar>
+        <Tab Title="one" Icon="dotnet_bot.png">
+
+         <ShellContent
+        Title="One"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        
+        Icon="dotnet_bot.png"/>
+
+        </Tab>
+        <Tab Title="Two">
+            <ShellContent Title="Two" ContentTemplate="{DataTemplate local:NewPage1}"/>
+        </Tab>
+        <Tab Title="Info">
+            <ShellContent Title="Info" ContentTemplate="{DataTemplate local:NewPage2}"/>
+        </Tab>
+    </TabBar>
+</Shell>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pract10.NewPage1"
+             xmlns:local="clr-namespace:pract10"
+             Title="Способ 2">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="lbstyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Blue"/>
+               
+                <Setter Property="FontSize" Value="13"/>
+            </Style>
+            <Style x:Key="radiostyle" TargetType="RadioButton">
+                <Setter Property="TextColor" Value="Blue"/>
+               
+                <Setter Property="FontSize" Value="13"/>
+                <Style.Triggers>
+                    <Trigger TargetType="RadioButton" Property="IsChecked" Value="True">
+                        <Setter Property="BackgroundColor" Value="LightBlue"/>
+                        <Setter Property="TextColor" Value="White"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style x:Key="entstyle" TargetType="Entry">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="BackgroundColor" Value="Black"/>
+                <Setter Property="FontSize" Value="13"/>
+                <Style.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+                        <Setter Property="BackgroundColor" Value="White"/>
+                        <Setter Property="TextColor" Value="Black"/>
+                    </Trigger>
+                    <EventTrigger Event="TextChanged">
+                        <local:EntryValidation/>
+                    </EventTrigger>
+                </Style.Triggers>
+            </Style>
+            <Style x:Key="btnstyle" TargetType="Button">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="BackgroundColor" Value="Black"/>
+                <Setter Property="FontSize" Value="13"/>
+            </Style>
+            <Style x:Key="chekstyle" TargetType="CheckBox">
+                <Setter Property="BackgroundColor" Value="Black"/>
+                <Setter Property="Color" Value="White"/>
+                <Style.Triggers>
+                    <Trigger TargetType="CheckBox" Property="IsChecked" Value="False">
+                        <Setter Property="BackgroundColor" Value="White"/>
+                        <Setter Property="Color" Value="Black"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout>
+        <StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <CheckBox x:Name="Chek" IsChecked="False" CheckedChanged="Chek_CheckedChanged"
+                          Style="{StaticResource Key=chekstyle}"/>
+                <Label Text="Вкл/Выкл" VerticalOptions="Center"
+                       Style="{StaticResource Key=lbstyle}"/>
+            </StackLayout>
+
+            <StackLayout x:Name="zxc">
+                <Label Text="1 значение" Style="{StaticResource Key=lbstyle}"/>
+                <Entry x:Name="znach1" TextChanged="znach_TextChanged"
+                       Style="{StaticResource Key=entstyle}"/>
+                <Label Text="2 значение" Style="{StaticResource Key=lbstyle}"/>
+                <Entry x:Name="znach2" TextChanged="znach_TextChanged"
+                       Style="{StaticResource Key=entstyle}"/>
+                <Label x:Name="lb" Text="Выберите способ" Style="{StaticResource Key=lbstyle}"/>
+                <RadioButton Content="плюс" x:Name="rb1" 
+                 CheckedChanged="RadioButton_CheckedChanged"
+                             Style="{StaticResource Key=radiostyle}"/>
+                <Entry x:Name="res1" IsReadOnly="True"/>
+                <RadioButton Content="минус" x:Name="rb2" 
+                  CheckedChanged="RadioButton_CheckedChanged"
+                             Style="{StaticResource Key=radiostyle}"/>
+                <Entry x:Name="res2" IsReadOnly="True"/>
+                <RadioButton Content="деление" x:Name="rb3" 
+                CheckedChanged="RadioButton_CheckedChanged"
+                             Style="{StaticResource Key=radiostyle}"/>
+                <Entry x:Name="res3" IsReadOnly="True"/>
+                <RadioButton Content="умножение" x:Name="rb4" 
+                CheckedChanged="RadioButton_CheckedChanged"
+                             Style="{StaticResource Key=radiostyle}"/>
+                <Entry x:Name="res4" IsReadOnly="True"/>
+                <RadioButton Content="возвести в степень(1-число,2-степень)" x:Name="rb5" 
+ CheckedChanged="RadioButton_CheckedChanged"
+                             Style="{StaticResource Key=radiostyle}"/>
+                <Entry x:Name="res5" IsReadOnly="True"/>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
